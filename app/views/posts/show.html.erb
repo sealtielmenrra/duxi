@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div>
+			<h3 class="panel-title"> 
+				<%= @post.title %>
+			</h3>
+		</div>
+		<div>		
+			<button type="button" class="btn btn-default navbar-btn" >
+				Report
+			</button>
+		</div>
+		<div>
+			<span class="label label-success">12.000</span>
+
+			<div class="input-group">
+			  <input type="text" class="form-control" aria-label="...">
+			  <div class="input-group-btn">
+			    <div class="btn-group">
+				  <button class="btn">Offert</button>
+				</div>
+			  </div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<div class="panel-body">
+	  <%= @post.body%>
+	</div>
+
+</div>
+
+<div>
+
+        <button type="button" class="btn btn-default navbar-btn" >
+			<%= link_to "Back", posts_path%>
+		</button>
+        <button type="button" class="btn btn-default navbar-btn" >
+			<%= link_to "Edit", edit_post_path(@post) %>
+		</button>
+	</div>
+			
+
+</div>

@@ -1,0 +1,18 @@
+
+<div class="panel panel-primary">
+
+		<% @posts.each do |post| %>
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<%= link_to post.title, post %>
+			</h3>
+         </div>
+		<div class="panel-body">
+			<%= post.body %>
+			<span class="label label-success">Offer</span>
+			     <button type="button" class="btn btn-default navbar-btn" >
+					<%= link_to "Delete", post, method: :delete %> 
+				 </button>
+		</div>
+		<%end%>
+</div>
