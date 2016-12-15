@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
+#recursos anidados
+  resources :posts do
+      resources :comments, only:[:create, :destroy, :update, :show]
+  end
   devise_for :users
-   # get 'welcome/index'
-   resources :posts
+
+  root 'welcome#index'
+  
+
+     # get 'welcome/index'
+
+
    
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -39,8 +47,7 @@ Rails.application.routes.draw do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end

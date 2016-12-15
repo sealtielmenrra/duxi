@@ -5,6 +5,7 @@
 		    <h1><%= name %> Post</h1>
 	      </h3>
 	</div>
+
 	<div class="panel-body">
 		<%= form_for(@post) do |f| %>
 		<% @post.errors.full_messages.each do |message| %>
@@ -12,6 +13,9 @@
 			<%= message %>
 			</div>
 		<%end%>	
+			<div>	
+		UPLOAD FILE: <%= f.file_field :cover%>
+	</div>
 		  <div class="field">
 		    <%= f.label :title %>
 		    <%= f.text_field :title, placeholder: "Title", class:"form-control"%>

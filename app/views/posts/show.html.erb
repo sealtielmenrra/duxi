@@ -1,3 +1,15 @@
+	<% unless @post.user.nil? %>
+	<p>
+		Escrito por: <%= @post.user.email %>
+	</p>
+
+	<%end%>
+	<div class="field">
+	  Archivo: <%= image_tag @post.cover.url(":thumb")%>
+	</div>
+		<p>
+		Visits : <%= @post.vists_count %>
+	</p>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <div>
@@ -31,6 +43,20 @@
 	</div>
 
 </div>
+
+	<div class="field">
+		<h3>Comentarios</h3>
+
+		<%= render "comments/form" %>
+		<ul id="comments-box">
+			<% @post.comments.each do |comment| %>
+			<li>
+				<%= comment.body %> - <%= comment.user.email %>
+			</li>
+			<%end%>
+		</ul>
+
+	</div>
 
 <div>
 
